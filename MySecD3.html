@@ -43,7 +43,7 @@ d3.csv("./table.csv", function(data) {
 	//定義Open畫線的規則
 	var linesOpen = d3.line().
 	x(function(d,i){ return i * (width/ln); }).  //寬值平均分配
-	y(function(d){ return height - d.Open * (height/maxOpen); });
+	y(function(d){ return height - d.Open * (height/maxHigh); });
 	//定義High畫線的規則
 	var linesHigh = d3.line().
 	x(function(d,i){ return i * (width/ln); }).  //寬值平均分配
@@ -51,11 +51,11 @@ d3.csv("./table.csv", function(data) {
 	//定義Low畫線的規則
 	var linesLow = d3.line().
 	x(function(d,i){ return i * (width/ln); }).  //寬值平均分配
-	y(function(d){ return height - d.Low * (height/maxLow); });
+	y(function(d){ return height - d.Low * (height/maxHigh); });
 	//定義Close畫線的規則
 	var linesClose = d3.line().
 	x(function(d,i){ return i * (width/ln); }).  //寬值平均分配
-	y(function(d){ return height - d.Close * (height/maxClose); });
+	y(function(d){ return height - d.Close * (height/maxHigh); });
 	//開始Open畫線
 	ctrl.append("path").data([data]).
 	attr("class", "pathline").  //補上pathline屬性讓CSS控制
