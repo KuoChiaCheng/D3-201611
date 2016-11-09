@@ -27,7 +27,7 @@ d3.csv("./table.csv", function(data) {
 	//定義畫線的規則
 	var lines = d3.line().
 	x(function(d,i){ return i * (width/ln); }).  //寬值平均分配
-	y(function(d){ return d.Open * (height/maxy); });  //Open值÷最大值*高值
+	y(function(d){ return height - d.Open; });  //高值 - Open值
 	//開始畫線
 	ctrl.append("path").data([data]).
 	attr("class", "pathline").  //補上pathline屬性讓CSS控制
