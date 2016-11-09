@@ -34,62 +34,6 @@ d3.csv("./table.csv", function(data) {
 	attr("d", lines);
 });
 
-//High呈現
-d3.csv("./table.csv", function(data) {
-	console.log(data);
-	data.forEach(function(d) {
-		console.log(d.High);
-	});
-	var maxy = d3.max(data, function(d) { return d.High; });
-	var ln = data.length;
-	var ctrl  = d3.select("body").append("svg").attr("width", width).attr("height", height);
-	//定義畫線的規則
-	var lines = d3.line().
-	x(function(d,i){ return i * (width/ln); }).  //寬值平均分配
-	y(function(d){ return d.High * (height/maxy); });  //Open值÷最大值*高值
-	//開始畫線
-	ctrl.append("path").data([data]).
-	attr("class", "pathline").  //補上pathline屬性讓CSS控制
-	attr("d", lines);
-});
-
-//Low呈現
-d3.csv("./table.csv", function(data) {
-	console.log(data);
-	data.forEach(function(d) {
-		console.log(d.Low);
-	});
-	var maxy = d3.max(data, function(d) { return d.Low; });
-	var ln = data.length;
-	var ctrl  = d3.select("body").append("svg").attr("width", width).attr("height", height);
-	//定義畫線的規則
-	var lines = d3.line().
-	x(function(d,i){ return i * (width/ln); }).  //寬值平均分配
-	y(function(d){ return d.Low * (height/maxy); });  //Open值÷最大值*高值
-	//開始畫線
-	ctrl.append("path").data([data]).
-	attr("class", "pathline").  //補上pathline屬性讓CSS控制
-	attr("d", lines);
-});
-
-//Close呈現
-d3.csv("./table.csv", function(data) {
-	console.log(data);
-	data.forEach(function(d) {
-		console.log(d.Close);
-	});
-	var maxy = d3.max(data, function(d) { return d.Close; });
-	var ln = data.length;
-	var ctrl  = d3.select("body").append("svg").attr("width", width).attr("height", height);
-	//定義畫線的規則
-	var lines = d3.line().
-	x(function(d,i){ return i * (width/ln); }).  //寬值平均分配
-	y(function(d){ return d.Close * (height/maxy); });  //Open值÷最大值*高值
-	//開始畫線
-	ctrl.append("path").data([data]).
-	attr("class", "pathline").  //補上pathline屬性讓CSS控制
-	attr("d", lines);
-});
 </script>
 </body>
 </html>
