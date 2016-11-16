@@ -1,7 +1,7 @@
 function caterpillar()
 {
-	var width  = 1024;
-	var height = 768;
+	var width  = 460;
+	var height = 268;
 	dataPath = 'https://github.com/KuoChiaCheng/D3-201611/';
 	dataFile = 'table.csv';
 	dataUrl = dataPath + dataFile;
@@ -16,7 +16,7 @@ d3.csv(dataUrl, function(data) {
 	});
 	var maxHigh = d3.max(data, function(d) { return d.High; });
 	var ln = data.length;
-	var ctrl  = d3.select("body").append("svg").attr("width", width).attr("height", height);
+	var ctrl  = d3.select("article").append("svg").attr("width", width).attr("height", height);
 	//定義Open畫線的規則
 	var linesOpen = d3.line().
 	x(function(d,i){ return i * (width/ln); }).  //寬值平均分配
