@@ -2,7 +2,7 @@ function caterpillar()
 {
 	var width  = 460;
 	var height = 268;
-	dataPath = 'https://github.com/KuoChiaCheng/D3-201611/';
+	dataPath = 'https://kuochiacheng.github.io/D3-201611/';
 	dataFile = 'table.csv';
 	dataUrl = dataPath + dataFile;
 
