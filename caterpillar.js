@@ -2,8 +2,11 @@ function caterpillar()
 {
 	var width  = 1024;
 	var height = 768;
+	dataPath = 'https://github.com/KuoChiaCheng/D3-201611/';
+	dataFile = 'table.csv';
+	dataUrl = dataPath + dataFile;
 
-d3.csv("./table.csv", function(data) {
+d3.csv(dataUrl, function(data) {
 	console.log(data);
 	data.forEach(function(d) {
 		console.log(d.Open);
